@@ -4,17 +4,13 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ArrowRight, Users, Briefcase, TrendingUp, CheckCircle2, Mail, Linkedin, Phone } from 'lucide-react'
-import { useRef } from 'react'
 
 export default function Home() {
-  // Create refs for smooth scrolling to sections
-  const servicesRef = useRef<HTMLDivElement>(null)
-  const contactRef = useRef<HTMLDivElement>(null)
-
   // Scroll to section function
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement> | null) => {
-    if (ref && ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' })
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -33,10 +29,10 @@ export default function Home() {
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
-            <button onClick={() => scrollToSection(servicesRef)} className="text-gray-600 hover:text-green-600 transition-colors">Services</button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-green-600 transition-colors">Services</button>
             <a href="#why-us" className="text-gray-600 hover:text-green-600 transition-colors">Why Us</a>
             <a href="#approach" className="text-gray-600 hover:text-green-600 transition-colors">Our Approach</a>
-            <button onClick={() => scrollToSection(contactRef)} className="text-gray-600 hover:text-green-600 transition-colors">Contact</button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-green-600 transition-colors">Contact</button>
           </div>
         </div>
       </nav>
@@ -56,7 +52,7 @@ export default function Home() {
                 <Button 
                   size="lg" 
                   className="bg-green-600 hover:bg-green-700 text-white"
-                  onClick={() => scrollToSection(contactRef)}
+                  onClick={() => scrollToSection('contact')}
                 >
                   Get Started <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -64,7 +60,7 @@ export default function Home() {
                   size="lg" 
                   variant="outline" 
                   className="border-green-600 text-green-600 hover:bg-green-50"
-                  onClick={() => scrollToSection(servicesRef)}
+                  onClick={() => scrollToSection('services')}
                 >
                   Learn More
                 </Button>
@@ -86,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section ref={servicesRef} id="services" className="py-20 px-4 sm:px-6 lg:px-8">
+      <section id="services" className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
@@ -325,7 +321,7 @@ export default function Home() {
           <Button 
             size="lg" 
             className="bg-white text-green-600 hover:bg-gray-100"
-            onClick={() => scrollToSection(contactRef)}
+            onClick={() => scrollToSection('contact')}
           >
             Schedule a Consultation <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
@@ -333,7 +329,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section ref={contactRef} id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h2>
@@ -397,9 +393,9 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">Services</h4>
               <ul className="space-y-2 text-sm">
-                <li><button onClick={() => scrollToSection(servicesRef)} className="hover:text-green-400">Executive Search</button></li>
-                <li><button onClick={() => scrollToSection(servicesRef)} className="hover:text-green-400">Contingent Search</button></li>
-                <li><button onClick={() => scrollToSection(servicesRef)} className="hover:text-green-400">Consulting</button></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-green-400">Executive Search</button></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-green-400">Contingent Search</button></li>
+                <li><button onClick={() => scrollToSection('services')} className="hover:text-green-400">Consulting</button></li>
               </ul>
             </div>
             <div>
@@ -407,7 +403,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#why-us" className="hover:text-green-400">About Us</a></li>
                 <li><a href="#approach" className="hover:text-green-400">Our Approach</a></li>
-                <li><button onClick={() => scrollToSection(contactRef)} className="hover:text-green-400">Contact</button></li>
+                <li><button onClick={() => scrollToSection('contact')} className="hover:text-green-400">Contact</button></li>
               </ul>
             </div>
             <div>
