@@ -354,7 +354,7 @@ export default function Home() {
                 <Linkedin className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">LinkedIn</h3>
-              <a href="https://linkedin.com" className="text-green-600 hover:text-green-700">
+              <a href="https://www.linkedin.com/company/hireclimb/" className="text-green-600 hover:text-green-700">
                 Connect with us
               </a>
             </Card>
