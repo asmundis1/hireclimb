@@ -338,24 +338,14 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="p-8 text-center hover:shadow-lg transition-shadow">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
                 <Mail className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Email</h3>
-              <a href="mailto:hello@hireclimb.com" className="text-green-600 hover:text-green-700">
-                hello@hireclimb.com
-              </a>
-            </Card>
-
-            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
-                <Phone className="w-6 h-6 text-green-600" />
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
-              <a href="tel:+1-555-0123" className="text-green-600 hover:text-green-700">
-                +1 (555) 0123
+              <a href="mailto:nikole@hireclimb.com" className="text-green-600 hover:text-green-700">
+                nikole@hireclimb.com
               </a>
             </Card>
 
@@ -411,7 +401,7 @@ export default function Home() {
               <ul className="space-y-2 text-sm">
                 <li><a href="#" className="hover:text-green-400">LinkedIn</a></li>
                 <li><a href="#" className="hover:text-green-400">Twitter</a></li>
-                <li><a href="mailto:hello@hireclimb.com" className="hover:text-green-400">Email</a></li>
+                <li><a href="mailto:nikole@hireclimb.com" className="hover:text-green-400">Email</a></li>
               </ul>
             </div>
           </div>
