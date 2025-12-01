@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { ArrowRight, Users, Briefcase, TrendingUp, CheckCircle2, Mail, Linkedin, Phone } from 'lucide-react'
-import Link from 'next/link'
 import { useRef } from 'react'
 
 export default function Home() {
@@ -49,7 +48,7 @@ export default function Home() {
                 Supplement Your Recruiting <span className="text-green-600">Bandwidth</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                HireClimb provides expert executive and contingent search recruiting consulting services. We're industry generalists ready to support your team's talent acquisition goals.
+                HireClimb provides expert executive and contingent search recruiting consulting services. We&apos;re industry generalists ready to support your team&apos;s talent acquisition goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -90,7 +89,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Comprehensive recruiting solutions tailored to your organization's needs
+              Comprehensive recruiting solutions tailored to your organization&apos;s needs
             </p>
           </div>
 
@@ -185,7 +184,7 @@ export default function Home() {
                 <h3 className="text-2xl font-bold text-gray-900">Bandwidth Support</h3>
               </div>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Extend your internal recruiting team's capacity without the overhead. We work seamlessly with your team to handle high-volume hiring and specialized searches.
+                Extend your internal recruiting team&apos;s capacity without the overhead. We work seamlessly with your team to handle high-volume hiring and specialized searches.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-center gap-2 text-gray-700">
@@ -243,7 +242,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Results-Driven</h3>
               <p className="text-gray-600">
-                We're focused on quality placements and long-term success. Your success is our success, and we're committed to delivering measurable results.
+                We&apos;re focused on quality placements and long-term success. Your success is our success, and we&apos;re committed to delivering measurable results.
               </p>
             </div>
 
@@ -273,7 +272,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Responsive Support</h3>
               <p className="text-gray-600">
-                Dedicated support and communication throughout the entire recruiting process. We're here when you need us.
+                Dedicated support and communication throughout the entire recruiting process. We&apos;re here when you need us.
               </p>
             </div>
           </div>
@@ -319,7 +318,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Climb Higher?</h2>
           <p className="text-xl text-green-50 mb-8 max-w-2xl mx-auto">
-            Let's discuss how HireClimb can supplement your recruiting bandwidth and help you find the talent you need.
+            Let&apos;s discuss how HireClimb can supplement your recruiting bandwidth and help you find the talent you need.
           </p>
           <Button 
             size="lg" 
@@ -337,7 +336,7 @@ export default function Home() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h2>
             <p className="text-xl text-gray-600">
-              We'd love to hear from you. Reach out to discuss your recruiting needs.
+              We&apos;d love to hear from you. Reach out to discuss your recruiting needs.
             </p>
           </div>
 
@@ -390,7 +389,7 @@ export default function Home() {
                 />
               </div>
               <p className="text-sm">
-                Recruiting consulting services to supplement your company's bandwidth.
+                Recruiting consulting services to supplement your company&apos;s bandwidth.
               </p>
             </div>
             <div>
