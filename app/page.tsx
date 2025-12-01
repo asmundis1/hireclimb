@@ -1,103 +1,428 @@
-import Image from "next/image";
+'use client'
+
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
+import { ArrowRight, Users, Briefcase, TrendingUp, CheckCircle2, Mail, Linkedin, Phone } from 'lucide-react'
+import Link from 'next/link'
+import { useRef } from 'react'
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  // Create refs for smooth scrolling to sections
+  const servicesRef = useRef<HTMLDivElement>(null)
+  const contactRef = useRef<HTMLDivElement>(null)
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+  // Scroll to section function
+  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="/images/logo.png"
+              alt="HireClimb Logo"
+              width={120}
+              height={40}
+              className="h-10 w-auto"
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          </div>
+          <div className="hidden md:flex items-center gap-8">
+            <button onClick={() => scrollToSection(servicesRef)} className="text-gray-600 hover:text-green-600 transition-colors">Services</button>
+            <a href="#why-us" className="text-gray-600 hover:text-green-600 transition-colors">Why Us</a>
+            <a href="#approach" className="text-gray-600 hover:text-green-600 transition-colors">Our Approach</a>
+            <button onClick={() => scrollToSection(contactRef)} className="text-gray-600 hover:text-green-600 transition-colors">Contact</button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-slate-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+                Supplement Your Recruiting <span className="text-green-600">Bandwidth</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                HireClimb provides expert executive and contingent search recruiting consulting services. We're industry generalists ready to support your team's talent acquisition goals.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button 
+                  size="lg" 
+                  className="bg-green-600 hover:bg-green-700 text-white"
+                  onClick={() => scrollToSection(contactRef)}
+                >
+                  Get Started <ArrowRight className="ml-2 w-4 h-4" />
+                </Button>
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="border-green-600 text-green-600 hover:bg-green-50"
+                  onClick={() => scrollToSection(servicesRef)}
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+            <div className="hidden md:block">
+              <div className="relative w-full h-96 rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/hero.png"
+                  alt="Professional recruiting team"
+                  width={600}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section ref={servicesRef} id="services" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Comprehensive recruiting solutions tailored to your organization's needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Executive Search */}
+            <Card className="p-8 border-l-4 border-l-green-600 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-green-100 rounded-lg">
+                  <Briefcase className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Executive Search</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Find top-tier executive talent for leadership positions. Our industry expertise and extensive network help identify candidates who align with your company culture and strategic vision.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  C-suite placements
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Director-level roles
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Strategic hiring
+                </li>
+              </ul>
+            </Card>
+
+            {/* Contingent Search */}
+            <Card className="p-8 border-l-4 border-l-green-600 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-green-100 rounded-lg">
+                  <Users className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Contingent Search</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Scale your team quickly with contingent staffing solutions. We provide flexible, results-based recruiting to meet your immediate and ongoing talent needs.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Flexible staffing
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Project-based hiring
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Rapid deployment
+                </li>
+              </ul>
+            </Card>
+
+            {/* Recruiting Consulting */}
+            <Card className="p-8 border-l-4 border-l-green-600 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-green-100 rounded-lg">
+                  <TrendingUp className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Recruiting Consulting</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Optimize your talent acquisition strategy with expert consulting. We help you build sustainable recruiting processes and strengthen your employer brand.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Strategy development
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Process optimization
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Employer branding
+                </li>
+              </ul>
+            </Card>
+
+            {/* Bandwidth Supplementation */}
+            <Card className="p-8 border-l-4 border-l-green-600 hover:shadow-lg transition-shadow">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="p-3 bg-green-100 rounded-lg">
+                  <Users className="w-6 h-6 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900">Bandwidth Support</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Extend your internal recruiting team's capacity without the overhead. We work seamlessly with your team to handle high-volume hiring and specialized searches.
+              </p>
+              <ul className="space-y-2">
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Team augmentation
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  High-volume hiring
+                </li>
+                <li className="flex items-center gap-2 text-gray-700">
+                  <CheckCircle2 className="w-4 h-4 text-green-600" />
+                  Specialized searches
+                </li>
+              </ul>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Us Section */}
+      <section id="why-us" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose HireClimb?</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              We bring expertise, flexibility, and results to every engagement
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <span className="text-2xl font-bold text-green-600">✓</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Industry Generalist</h3>
+              <p className="text-gray-600">
+                Expertise across all industries and sectors. We understand diverse talent markets and can adapt quickly to your specific needs.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <span className="text-2xl font-bold text-green-600">✓</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Flexible Solutions</h3>
+              <p className="text-gray-600">
+                From full executive searches to contingent staffing, we scale our services to match your timeline and budget requirements.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <span className="text-2xl font-bold text-green-600">✓</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Results-Driven</h3>
+              <p className="text-gray-600">
+                We're focused on quality placements and long-term success. Your success is our success, and we're committed to delivering measurable results.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <span className="text-2xl font-bold text-green-600">✓</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Expert Network</h3>
+              <p className="text-gray-600">
+                Access to an extensive network of qualified candidates across industries, levels, and specializations.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <span className="text-2xl font-bold text-green-600">✓</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Seamless Integration</h3>
+              <p className="text-gray-600">
+                We work as an extension of your team, integrating smoothly with your existing processes and culture.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
+                <span className="text-2xl font-bold text-green-600">✓</span>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Responsive Support</h3>
+              <p className="text-gray-600">
+                Dedicated support and communication throughout the entire recruiting process. We're here when you need us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach Section */}
+      <section id="approach" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Approach</h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              A proven methodology for finding the right talent
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { step: '1', title: 'Discovery', desc: 'We deeply understand your needs, culture, and requirements' },
+              { step: '2', title: 'Strategy', desc: 'Develop a targeted recruiting strategy tailored to your goals' },
+              { step: '3', title: 'Sourcing', desc: 'Leverage our network to identify qualified candidates' },
+              { step: '4', title: 'Placement', desc: 'Guide candidates through the process to successful placement' },
+            ].map((item, idx) => (
+              <div key={idx} className="relative">
+                <div className="bg-white border-2 border-green-600 rounded-lg p-6 text-center h-full">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-green-600 text-white rounded-full font-bold mb-4">
+                    {item.step}
+                  </div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                  <p className="text-gray-600 text-sm">{item.desc}</p>
+                </div>
+                {idx < 3 && (
+                  <div className="hidden md:block absolute top-1/2 -right-3 w-6 h-0.5 bg-green-600 transform -translate-y-1/2" />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-600 to-green-700">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Ready to Climb Higher?</h2>
+          <p className="text-xl text-green-50 mb-8 max-w-2xl mx-auto">
+            Let's discuss how HireClimb can supplement your recruiting bandwidth and help you find the talent you need.
+          </p>
+          <Button 
+            size="lg" 
+            className="bg-white text-green-600 hover:bg-gray-100"
+            onClick={() => scrollToSection(contactRef)}
+          >
+            Schedule a Consultation <ArrowRight className="ml-2 w-4 h-4" />
+          </Button>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section ref={contactRef} id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Get In Touch</h2>
+            <p className="text-xl text-gray-600">
+              We'd love to hear from you. Reach out to discuss your recruiting needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
+                <Mail className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Email</h3>
+              <a href="mailto:hello@hireclimb.com" className="text-green-600 hover:text-green-700">
+                hello@hireclimb.com
+              </a>
+            </Card>
+
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
+                <Phone className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
+              <a href="tel:+1-555-0123" className="text-green-600 hover:text-green-700">
+                +1 (555) 0123
+              </a>
+            </Card>
+
+            <Card className="p-8 text-center hover:shadow-lg transition-shadow">
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-green-100 rounded-full mb-4">
+                <Linkedin className="w-6 h-6 text-green-600" />
+              </div>
+              <h3 className="font-bold text-gray-900 mb-2">LinkedIn</h3>
+              <a href="https://linkedin.com" className="text-green-600 hover:text-green-700">
+                Connect with us
+              </a>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Image
+                  src="/images/logo.png"
+                  alt="HireClimb Logo"
+                  width={100}
+                  height={32}
+                  className="h-8 w-auto"
+                />
+              </div>
+              <p className="text-sm">
+                Recruiting consulting services to supplement your company's bandwidth.
+              </p>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Services</h4>
+              <ul className="space-y-2 text-sm">
+                <li><button onClick={() => scrollToSection(servicesRef)} className="hover:text-green-400">Executive Search</button></li>
+                <li><button onClick={() => scrollToSection(servicesRef)} className="hover:text-green-400">Contingent Search</button></li>
+                <li><button onClick={() => scrollToSection(servicesRef)} className="hover:text-green-400">Consulting</button></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#why-us" className="hover:text-green-400">About Us</a></li>
+                <li><a href="#approach" className="hover:text-green-400">Our Approach</a></li>
+                <li><button onClick={() => scrollToSection(contactRef)} className="hover:text-green-400">Contact</button></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-bold text-white mb-4">Connect</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:text-green-400">LinkedIn</a></li>
+                <li><a href="#" className="hover:text-green-400">Twitter</a></li>
+                <li><a href="mailto:hello@hireclimb.com" className="hover:text-green-400">Email</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 pt-8 text-center text-sm">
+            <p>&copy; 2025 HireClimb. All rights reserved.</p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
