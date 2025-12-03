@@ -25,7 +25,7 @@ export default function Home() {
               alt="HireClimb Logo"
               width={600}
               height={200}
-              className="h-50 w-auto"
+              className="h-16 w-auto"
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -46,7 +46,7 @@ export default function Home() {
                 Supplement Your Recruiting <span className="text-green-600">Bandwidth</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                HireClimb provides expert executive and contingent search recruiting consulting services. We&rsquo;re industry generalists ready to support your team&rsquo;s talent acquisition goals.
+                HireClimb provides expert executive and contingent search recruiting consulting services. Ready to support your team&rsquo;s talent acquisition goals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button 
@@ -218,9 +218,9 @@ export default function Home() {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-green-100 rounded-full mb-4">
                 <span className="text-2xl font-bold text-green-600">✓</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Industry Generalist</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Industry Expertise</h3>
               <p className="text-gray-600">
-                Expertise across all industries and sectors. We understand diverse talent markets and can adapt quickly to your specific needs.
+                Deep knowledge across all industries and sectors. We understand diverse talent markets and can adapt quickly to your specific needs.
               </p>
             </div>
 
@@ -399,7 +399,7 @@ export default function Home() {
             <div>
               <h4 className="font-bold text-white mb-4">Connect</h4>
               <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-green-400">LinkedIn</a></li>
+                <li><a href="https://www.linkedin.com/company/hireclimb/" className="hover:text-green-400">LinkedIn</a></li>
                 <li><a href="#" className="hover:text-green-400">Twitter</a></li>
                 <li><a href="mailto:nikole@hireclimb.com" className="hover:text-green-400">Email</a></li>
               </ul>
