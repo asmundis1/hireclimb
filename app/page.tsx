@@ -17,15 +17,15 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-transparent z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
+      <nav className="w-full bg-white border-b border-gray-100 sticky top-0 z-40">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Image
               src="/images/logo.png"
               alt="HireClimb Logo"
               width={600}
               height={200}
-              className="h-48 w-auto"
+              className="h-12 w-auto"
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
@@ -38,7 +38,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-56 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-slate-100">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
