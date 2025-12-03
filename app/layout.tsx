@@ -49,6 +49,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Start of HubSpot Embed Code */}
+        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23878665.js"></script>
+        {/* End of HubSpot Embed Code */}
+      </head>
       <body className={inter.className}>
         {children}
       </body>
