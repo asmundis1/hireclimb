@@ -23,9 +23,9 @@ export default function Home() {
             <Image
               src="/images/logo.png"
               alt="HireClimb Logo"
-              width={120}
-              height={40}
-              className="h-10 w-auto"
+              width={600}
+              height={200}
+              className="h-50 w-auto"
             />
           </div>
           <div className="hidden md:flex items-center gap-8">
