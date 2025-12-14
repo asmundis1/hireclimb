@@ -1,0 +1,16 @@
+<svg viewBox="0 0 1024 628" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark blue background -->
+  <rect width="1024" height="628" fill="#1a3a52"/>
+  
+  <!-- Light blue background for top half -->
+  <rect width="1024" height="314" fill="#4da6ff"/>
+  
+  <!-- Green background for bottom half -->
+  <rect y="314" width="1024" height="314" fill="#4caf50"/>
+  
+  <!-- HIRE text in light blue -->
+  <text x="512" y="220" font-family="Arial, sans-serif" font-size="280" font-weight="bold" fill="#4da6ff" text-anchor="middle">HIRE</text>
+  
+  <!-- climb text in white -->
+  <text x="512" y="520" font-family="Arial, sans-serif" font-size="280" font-weight="bold" fill="white" text-anchor="middle">climb.</text>
+</svg>
